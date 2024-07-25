@@ -6,11 +6,10 @@ const Header = ({ islogged, userDetails, isOwner }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear local storage
+    
     localStorage.removeItem('userDetails');
     localStorage.removeItem('islogged');
 
-    // Navigate to the home page or login page after logout
     navigate('/login');
     window.location.reload();
   };

@@ -1,6 +1,6 @@
 import { Button, Input } from "@nextui-org/react";
 import React, { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const CustomerSignup = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const CustomerSignup = () => {
     password: "",
   });
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,21 +22,22 @@ const CustomerSignup = () => {
 
   const handleClick = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/customer-signup", formData);
+      const response = await axios.post(
+        "http://localhost:3000/customer-signup",
+        formData
+      );
       console.log("Signup successful:", response.data);
-      // Handle successful signup (e.g., redirect to login page or show success message)
-      setError(''); // Clear any previous errors
+
+      setError("");
     } catch (error) {
       console.error("Signup error:", error);
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        setError(error.response.data.message || "An error occurred during signup");
+        setError(
+          error.response.data.message || "An error occurred during signup"
+        );
       } else if (error.request) {
-        // The request was made but no response was received
         setError("No response received from server. Please try again.");
       } else {
-        // Something happened in setting up the request that triggered an Error
         setError("An error occurred. Please try again.");
       }
     }
@@ -78,7 +79,9 @@ const CustomerSignup = () => {
           onChange={handleChange}
         />
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <Button className="w-full bg-blue-500 text-white" onClick={handleClick}>Sign Up</Button>
+        <Button className="w-full bg-blue-500 text-white" onClick={handleClick}>
+          Sign Up
+        </Button>
       </div>
     </div>
   );
