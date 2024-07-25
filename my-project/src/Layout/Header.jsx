@@ -18,7 +18,9 @@ const Header = ({ islogged, userDetails, isOwner }) => {
     <div>
       <header className="bg-white shadow">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-2xl font-bold">GuestRoomBooking</h1>
+          <h1 className="text-2xl font-bold">
+            <Link to='/'>GuestRoomBooking</Link>
+          </h1>
           <nav>
             <ul className="flex justify-center items-center space-x-8">
               {!islogged ? (
@@ -68,7 +70,7 @@ const Header = ({ islogged, userDetails, isOwner }) => {
                     </li>
                   )}
                   <li className="">
-                    <Link to="/profile"><Avatar name="hello" /></Link>
+                    <Link to="/profile"><Avatar name={"A"} /></Link>
                   </li>
                   <li className="">
                     <button onClick={handleLogout} className="text-blue-500">Logout</button>

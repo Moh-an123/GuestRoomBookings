@@ -41,7 +41,7 @@ const router=createBrowserRouter([
         path:'/home',
         element:<Roompage />
       },{
-        path:'/room/:id',
+        path:'/roomid/:rid',
         element:<RoomDetails />
       },{
         path:'/bookings',

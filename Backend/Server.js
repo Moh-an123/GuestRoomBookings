@@ -3,7 +3,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const connectDB = require('./config/database.js');
 const userRoutes = require('./routes/userRoutes');
-const getPage=require('./routes/getPage.js');
 const signUp=require('./routes/ownerSignup.js');
 const customerSignup=require('./routes/customerSignup.js');
 const getDetail=require('./routes/getdetails.js')
@@ -19,7 +18,6 @@ connectDB();
 
 // Use routes
 app.use('/api/users', userRoutes);
-app.use('/',getPage);
 app.use('/',signUp);
 app.use('/',customerSignup);
 app.use('/',getDetail);

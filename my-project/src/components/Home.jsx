@@ -19,7 +19,7 @@ export default function Home() {
         </section>
 }
 
-        <section id="features" className="py-20 bg-gray-100">
+        <section id="features" className={"py-20 "+`${islogged?"bg-blue-500":''}`}>
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">Features</h2>
             <div className="flex flex-wrap justify-center space-y-4 md:space-y-0 md:space-x-4">
